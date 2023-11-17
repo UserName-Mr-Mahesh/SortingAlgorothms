@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section>
+        <div id="hedder">
+            <h1>Comparison Sorting Algorithms</h1>
+        </div>
+
+        <div id="main">
+            <div class="sortings">
+                <ul>
+                    <li><button type="button" class="btn btn-outline-success btn-dark newArray">Randomize Array</button></li>
+                    <li><button type="button" class="btn btn-outline-primary btn-dark insertionSort">Insertion Sort</button></li>
+                    <li><button type="button" class="btn btn-outline-primary btn-dark selectionSort">Selection Sort</button></li>
+                    <li><button type="button" class="btn btn-outline-primary btn-dark bubbleSort">Bubble Sort</button></li>
+                    <li><button type="button" class="btn btn-outline-primary btn-dark quickSort">Quick Sort</button></li>
+                    <li><button type="button" class="btn btn-outline-primary btn-dark mergeSort">Merge Sort</button></li>
+                    <li><button type="button" class="btn btn-outline-primary btn-dark shellSort">Shell Sort</button></li>
+                    <li><button type="button" class="btn btn-outline-primary btn-dark changeSize">Change Size</button></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <!-- <div class="col gap-2 d-sm-flex" id="newArray">
+                    <button type="button" class="btn btn-outline-success btn-dark newArray">New Array</button>
+                </div> -->
+                <div class="col" id="input">
+                    <span id="size">Animation Size
+                        <input id="arr_sz" type="range" min="5" max="100" step=1 value=60>
+                    </span>
+                    <span id="speed">Animation Speed
+                        <input id="speed_input" type="range" min="20" max="300" stepDown=10 value=60>
+                    </span>
+                </div>
+            </div>
+            <div id="graph">
+                <div id="bars" class="flex-container"></div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+            <script src="./js_files/bubble.js"></script>
+            <script src="js_files/insertion.js"></script>
+            <script src="js_files/merge.js"></script>
+            <script src="js_files/quick.js"></script>
+            <script src="js_files/selection.js"></script>
+            <script src="js_files/sorting.js"></script>
+            <script src="js_files/shell.js"></script>
+            <script src="js_files/change.js"></script>
+            <div class="sortings">
+                <ul>
+                    <li><button>Skip Back</button></li>
+                    <li><button>Step Back</button></li>
+                    <li><button>Pause</button></li>
+                    <li><button>Step Forword</button></li>
+                    <li><button>Skip Forword</button></li>
+                    <li><input type="range"><br>Animation Speed</li>
+                    <li>W: <input type="number"></li>
+                    <li>h: <input type="number"></li>
+                    <li><button>Change Canvas Size</button></li>
+                    <li><button>Move Controls</button></li>
+                </ul>
+            </div>
+        </div>
+        <div id="footer">
+            <h2>Algorothm Visualizations</h2>
+        </div>
+    </section>
+</body>
+</html>
