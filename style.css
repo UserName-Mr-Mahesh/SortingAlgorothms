@@ -5,15 +5,16 @@
 }
 section{
     width: 100%;
-    background-color: green;
+    background-color: rgb(5, 114, 5);
 }
 #hedder{
     font-size: large;
-    background-color: green;
+    background-color: rgb(5, 114, 5);
     color: yellow;
+    padding: 10px 20px;
 }
 #main{
-    margin-left: 5px;
+    margin: 5px;
     background-color: white;
 }
 .sortings{
@@ -37,21 +38,24 @@ section{
 }
 #graph{
     height: 70vh;
+    width: 100%;
 }
 .flex-container{
     margin: 20px 30px;
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
-    height: 300px;
+    height: 500px;
     transition: 2s all ease;
     transform: rotateX(180deg);
-
+    padding: 100px 100px;
+    /* position: fixed; */
+    overflow: hidden;
 }
 .flex-item{
     background: cyan;
-    margin: 2px;
-    width: 10px;
+    margin: 3px;
+    width: 15px;
     transition: 0.1s all ease;
 
  }
@@ -63,7 +67,7 @@ section{
 
 #input{
     display: flex;
-    padding: 10px;
+    padding: 10px 10%;
     justify-content: space-around;
 }
 .bar-label {
@@ -72,8 +76,11 @@ section{
     color: red;
     font-size: 10px;
     position: relative;
-    top: -20px;
+    top: -15px;
+    transform: rotateX(180deg);
 }
 #footer{
-    background-color: green;
+    background-color: rgb(5, 114, 5);
+    padding: 5px 20px;
+    color: yellowgreen;
 }

@@ -7,6 +7,15 @@ function swap(el1, el2) {
     el2.style.height = temp;
     
 }
+function swapnum(el1, el2) {
+    console.log('In swap()');
+    
+    let temp = el1.innerHTML;
+    el1.innerHTML = el2.innerHTML;
+    el2.innerHTML = temp;
+    
+}
+
 
 // Disables sorting buttons used in conjunction with enable, so that we can disable during sorting and enable buttons after it
 function disableSortingBtn(){
@@ -15,6 +24,7 @@ function disableSortingBtn(){
     document.querySelector(".mergeSort").disabled = true;
     document.querySelector(".quickSort").disabled = true;
     document.querySelector(".selectionSort").disabled = true;
+    document.querySelector(".shellSort").disabled = true;
 }
 
 // Enables sorting buttons used in conjunction with disable
@@ -24,6 +34,7 @@ function enableSortingBtn(){
     document.querySelector(".mergeSort").disabled = false;
     document.querySelector(".quickSort").disabled = false;
     document.querySelector(".selectionSort").disabled = false;
+    document.querySelector(".shellSort").disabled = false;
 }
 
 // Disables size slider used in conjunction with enable, so that we can disable during sorting and enable buttons after it
@@ -44,13 +55,6 @@ function disableNewArrayBtn(){
 // Enables newArray buttons used in conjunction with disable
 function enableNewArrayBtn(){
     document.querySelector(".newArray").disabled = false;
-}
-
-// Used in async function so that we can so animations of sorting, takes input time in ms (1000 = 1s)
-function waitforme(milisec) { 
-    return new Promise(resolve => { 
-        setTimeout(() => { resolve('') }, milisec); 
-    }) 
 }
 
 // Selecting size slider from DOM
@@ -74,6 +78,7 @@ delayElement.addEventListener('input', function(){
     delay = 320 - parseInt(delayElement.value);
 });
 
+
 // Creating array to store randomly generated numbers
 let array = [];
 
@@ -81,7 +86,7 @@ let array = [];
 createNewArray();
 
 // To create new array input size of array
-function createNewArray(noOfBars = 50) {
+function createNewArray(noOfBars = 40) {
     // calling helper function to delete old bars from dom
     deleteChild();
 
@@ -100,8 +105,13 @@ function createNewArray(noOfBars = 50) {
         const bar = document.createElement("div");
         bar.style.height = `${array[i]*2}px`;
         bar.classList.add('bar');
+        // bar.classList.add("bar-label")
         bar.classList.add('flex-item');
         bar.classList.add(`barNo${i}`);
+        const label=document.createElement("div");
+        label.classList.add("bar-label");
+        label.innerText=array[i]
+        bar.append(label);
         bars.appendChild(bar);
     }
 }
@@ -121,3 +131,50 @@ newArray.addEventListener("click", function(){
     enableSizeSlider();
     createNewArray(arraySize.value);
 });
+
+
+
+
+let isPaused;
+let pauseElement = document.querySelector('.pause');
+pauseElement.addEventListener("click",function(){
+    if(isPaused) {
+        isPaused=false;
+    } else {
+        isPaused=true;
+    }
+});
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function performAction() {
+    if (isPaused){
+        await waitForResume();
+    }
+    await wait(delay);
+    console.log('Action completed');
+}
+
+function pauseAction() {
+  isPaused = true;
+  console.log('Action paused');
+}
+
+function resumeAction() {
+  isPaused = false;
+  console.log('Action resumed');
+}
+
+function waitForResume() {
+  return new Promise(resolve => {
+    const checkPause = () => {
+      if (!isPaused) {
+        resolve();
+      } else {
+        setTimeout(checkPause, 0); // Check every 100 milliseconds for resume
+      }
+    };
+    checkPause();
+  });
+}
