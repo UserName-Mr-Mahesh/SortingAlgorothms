@@ -132,6 +132,21 @@ newArray.addEventListener("click", function(){
     createNewArray(arraySize.value);
 });
 
+// Function to update the max attribute of the input element based on screen size
+function updateMaxAttributeValue() {
+    const arrSizeInput = document.getElementById("arr_sz");
+    if (window.innerWidth < 769) {
+        arrSizeInput.setAttribute("max", "35");
+    } else {
+        arrSizeInput.setAttribute("max", "50");
+    }
+}
+
+// Call the function initially to set the correct max value
+updateMaxAttributeValue();
+
+// Event listener to update max value when window is resized
+window.addEventListener("resize", updateMaxAttributeValue);
 
 
 

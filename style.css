@@ -104,7 +104,7 @@ h6 {
     .flex-item{
         background: #0d47a1cc;
         width: 1.5%;
-        margin: 1px;
+        margin: 2px;
         transition: 0.1s all ease;
     }
 }
