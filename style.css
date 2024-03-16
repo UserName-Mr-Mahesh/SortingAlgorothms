@@ -23,6 +23,8 @@
 .list-components ul{
     display: flex;
     list-style-type: none;
+    flex-wrap: wrap;
+    justify-content: center;
 
 }
 .list-components ul li button{ 
@@ -68,7 +70,7 @@ h6 {
 
 .flex-item{
     background: #0d47a1cc;
-    width: 10px;
+    width: 1.5%;
     margin: 2px;
     transition: 0.1s all ease;
 }
@@ -82,8 +84,8 @@ h6 {
     transform: rotateX(180deg);
 }
 .row{
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
+    /* display: block; */
+    /* grid-template-columns: 1fr 1fr 2fr; */
 }
 #input{
     display: flex;
@@ -94,4 +96,15 @@ h6 {
     background-color: green;
     color: yellow;
     padding: 10px;
+}
+@media screen and (max-width: 769px) {
+    .flex-container{
+        margin: 25px 0 0 15px;
+    }
+    .flex-item{
+        background: #0d47a1cc;
+        width: 1.5%;
+        margin: 1px;
+        transition: 0.1s all ease;
+    }
 }
