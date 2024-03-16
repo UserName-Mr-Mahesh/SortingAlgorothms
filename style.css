@@ -83,10 +83,10 @@ h6 {
     top: -20px;
     transform: rotateX(180deg);
 }
-.row{
-    /* display: block; */
-    /* grid-template-columns: 1fr 1fr 2fr; */
-}
+/* .row{
+    display: block;
+    grid-template-columns: 1fr 1fr 2fr;
+} */
 #input{
     display: flex;
     padding: 10px;
@@ -103,7 +103,7 @@ h6 {
     }
     .flex-item{
         background: #0d47a1cc;
-        width: 1.5%;
+        width: 2%;
         margin: 2px;
         transition: 0.1s all ease;
     }
